@@ -5,11 +5,19 @@
 ```bigquery
 对了
 在这里挂几个盗版狗
-kuanggongzhushou/MinerProxy
+MinerPr0xy/MinerProxy  (不是老矿工那个)
 nicococococ/MinerProxyLite
-CharIesOrz/minerProxy
+CharIesOrz/minerProxy   把我的名字1变成大写的i了
 ryu-shen/minerProxy
+minerproxyeth/minerproxy 这个人总改名字
+Char1es0rz/minerProxy 把我的名字中的O变成0了
 盗版加料，已经有2个人找我说被抽了100%了
+2022-01-29 20:39    4.0.0T9>>>修复被CC攻击软件崩溃
+2022-01-14 20:10    4.0.0T8>>>修复了ETH专业矿机矿机名显示不正确的问题;修复了小部分人软件崩溃的问题
+2022-01-11 04:31    4.0.0T7>>>新增ETH专业矿机支持,币种选择eth_stratum
+2022-01-11 21:31    4.0.0T6>>>修复了矿机名重复情况下web端显示错误问题,增加了首页 矿池设置页面自动刷新功能
+2022-01-11 01:00    4.0.0T5>>>修复了web端在线矿机会显示为离线矿机的显示问题
+2022-01-10 18:13    4.0.0T4>>>修复了同一个矿池下多个钱包地址 矿工名会互相显示在对方钱包的问题
 2022-01-09 21:53    4.0.0T3>>>新增 动态修改抽水比例
 2022-01-09 18:41    4.0.0T2>>>修复了前端白屏问题
 2022-01-09 16:51    4.0.0T1>>>
@@ -18,7 +26,6 @@ ryu-shen/minerProxy
 2021-12-27 19:16    3.0.3>>>修复了内存溢出的问题,强烈建议3.0.X和2.6.X系列用户升级
 2021-12-26 00:02    3.0.2>>>继续修复有的矿机掉线后无法连接或不断开连接的问题
                     建议3.0.X版本升级到此版本
-
 2021-12-26 00:02    3.0.1
                     1. 修复了有的矿机掉线后无法连接或不断开连接的问题
                     2. 修复了部分人蚂蚁矿池无法连接的问题
@@ -58,28 +65,42 @@ ryu-shen/minerProxy
 2.5.5以上版本可以查看抽水的份额了(ps:当代理矿池和抽水矿池不一样时需要根据矿池算力自己算一下百分比)
 ```
 
-## Liunx下
+## Windows 直接下载运行 <a href="https://github.com/Char1esOrz/minerProxy/releases">Release</a></br>
+
+---
+
+## Liunx一键管理工具 包含安装/启动/停止/更新/删除
 
 ```bash
-# 运行3.0.3稳定版
-mkdir minerProxy303 && cd minerProxy303
-wget https://raw.githubusercontent.com/Char1esOrz/minerProxy/master/release/v3.0.3/minerProxy_web
-chmod 777 minerProxy_web
-./minerProxy_web
-# 运行4.0.0测试版
-mkdir minerProxy400T3 && cd minerProxy400T3
-wget https://raw.githubusercontent.com/Char1esOrz/minerProxy/master/release/v4.0.0T3/minerProxy_v4.0.0T3_linux_amd64
-chmod 777 minerProxy_v4.0.0T3_linux_amd64
-./minerProxy_v4.0.0T3_linux_amd64
+# 可直连github的服务器
+bash <(curl -s -L https://raw.githubusercontent.com/Char1esOrz/minerProxy/master/scripts/tools.sh)
+# 无法访问github的大陆服务器
+bash <(curl -s -L https://cdn.jsdelivr.net/gh/Char1esOrz/minerProxy@master/scripts/tools_cdn.sh)
+```
+
+### 查看运行情况
+```bash
+screen -r minerProxy
+```
+### 退出查看运行情况 键盘键入
+```
+ctrl + a + d
+```
+
+---
+## Linux手动安装
+```bash
+mkdir minerProxy
+cd minerProxy
+wget https://raw.githubusercontent.com/Char1esOrz/minerProxy/master/release/v4.0.0T9/minerProxy_v4.0.0T9_linux_amd64
+chmod 777 minerProxy_v4.0.0T9_linux_amd64
+./minerProxy_v4.0.0T9_linux_amd64
 ```
 
 ### 后台运行（注意后面的&）运行完再敲几下回车
 
 ```bash
-# 运行3.0.3稳定版
-nohup ./minerProxy_web &
-# 运行4.0.0测试版
-nohup ./minerProxy_v4.0.0T3_linux_amd64 &
+nohup ./minerProxy_v4.0.0T9_linux_amd64 &
 # 运行之后查看webtoken
 tail -f nohup.out
 ```
@@ -93,31 +114,17 @@ killall minerProxy
 ```bash
 tail -f nohup.out
 ```
-### 更新软件 （等待今晚更新一键更新脚本）
-```bash
-
-```
-## 提示bash: wget: command not found的先安装wget
-### ubuntu下
-```bash
-apt update
-apt install wget
-```
-### centos下
-```bash
-yum update
-yum install wget
-```
-
 ## 重要说明
 
 ```bigquery
-推荐使用腾讯云香港节点,flexpool和ethermine都可以到50ms左右,延迟率在0.5%-0.9%之间
-该软件系统占用极小,开最便宜的云服务器即可
-可接定制软件
-tg交流群
-https://t.me/minerProxyGroup
-```
+开发者费用
+本软件如果您开启了抽水则为0.3%的开发者费用,如果您不开启抽水,则没有开发者费用,可以自行抓包查看
 
-![img_2.png](img/img_2.png)
+
+推荐使用腾讯云香港节点,flexpool和ethermine都可以到50ms左右,延迟率在0.5%-0.9%之间
+该软件系统占用极小,开最便宜的云服务器即可（不要使用轻量服务器,轻量网络极差）
+```
+<a href="https://t.me/minerProxyGroup">tg 交流群</a></br>
+<a href="https://qm.qq.com/cgi-bin/qm/qr?k=e0Vr0j34bix_1F6ZM15cOomnz3xNamlM&jump_from=webapi">QQ交流群 (゜-゜)つロ 干杯</a></br>
+<img src="https://raw.githubusercontent.com/Char1esOrz/minerProxy/master/img/img_2.png" width="250"></img>
 
